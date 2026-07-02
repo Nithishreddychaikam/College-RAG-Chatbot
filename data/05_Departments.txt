@@ -1,0 +1,16 @@
+Departments
+
+ABC Institute of Technology offers the following academic departments:
+
+- Computer Science and Engineering (CSE)
+- Artificial Intelligence and Data Science (AI & DS)
+- Electronics and Communication Engineering (ECE)
+- Electrical and Electronics Engineering (EEE)
+- Mechanical Engineering
+- Civil Engineering
+- Master of Business Administration (MBA)
+- Master of Computer Applications (MCA)
+
+Each department has experienced faculty members, modern laboratories, industry collaborations, and research facilities.
+
+Students are encouraged to participate in technical events, workshops, internships, and innovation activities organized by their respective departments.

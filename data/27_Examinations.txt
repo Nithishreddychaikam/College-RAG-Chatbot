@@ -1,0 +1,35 @@
+Examination System
+
+The college follows the academic regulations prescribed by the affiliated university.
+
+Evaluation Pattern
+
+The evaluation consists of:
+
+- Internal Assessment Tests
+- Laboratory Examinations
+- Assignments
+- Mini Projects
+- Semester End Examinations
+
+Attendance Requirement
+
+Students must maintain at least 75% attendance to become eligible for semester examinations.
+
+Hall Tickets
+
+Hall tickets are issued before every semester examination.
+
+Grading System
+
+Students are evaluated based on credits and grade points as per university regulations.
+
+Malpractice Rules
+
+- Mobile phones are prohibited.
+- Any form of malpractice leads to disciplinary action.
+- Students must carry their hall ticket and ID card during examinations.
+
+Supplementary Examinations
+
+Students who fail a subject may appear for supplementary examinations conducted by the university.

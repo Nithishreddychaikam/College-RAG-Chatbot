@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <div class="app-card">
+            <header class="topbar">
+                <div class="brand-group">
+                    <div class="brand-mark">🎓</div>
+                    <div class="brand-copy">
+                        <h1>College AI Assistant</h1>
+                        <p>AI Powered College Information System</p>
+                    </div>
+                </div>
+
+                <div class="top-actions">
+                    <div class="status-pill">
+                        <span class="status-dot"></span>
+                        <span>Online</span>
+                    </div>
+                    <button id="clear-btn" type="button" aria-label="Clear chat history">
+                        <i class="fa-solid fa-trash"></i>
+                        <span>Clear chat</span>
+                    </button>
+                </div>
+            </header>
+
+            <main id="chat-box" class="chat-area" aria-live="polite" aria-label="Conversation"></main>
+
+            <footer class="input-area">
+                <div class="input-shell">
+                    <i class="fa-regular fa-paperclip"></i>
+                    <textarea
+    id="question"
+    rows="1"
+    placeholder="Ask anything about your college..."
+    autocomplete="off"
+    spellcheck="false"
+    aria-label="Ask anything about your college"
+></textarea>
+                </div>
+                <button id="send-btn" type="button" aria-label="Send message">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

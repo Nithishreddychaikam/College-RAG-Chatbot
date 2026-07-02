@@ -1,0 +1,18 @@
+Student Clubs
+
+The college promotes extracurricular activities through various student clubs.
+
+Available Clubs:
+
+- Coding Club
+- Robotics Club
+- Artificial Intelligence Club
+- Entrepreneurship Cell
+- Cultural Club
+- Literary Club
+- Photography Club
+- NSS
+- NCC
+- Eco Club
+
+Students are encouraged to participate in workshops, hackathons, technical events, cultural festivals, and community service activities.
