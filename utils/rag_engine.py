@@ -27,7 +27,12 @@ vectorstore = Chroma(
 )
 
 retriever = vectorstore.as_retriever(
-    search_kwargs={"k": 2}
+    search_type="mmr",
+    search_kwargs={
+        "k":4,
+        "fetch_k":10,
+        "lambda_mult":0.5
+    }
 )
 
 # -----------------------------
@@ -46,7 +51,21 @@ def ask_question(question):
 
     docs = retriever.invoke(question)
 
-    context = "\n\n".join([doc.page_content for doc in docs])
+    print("\n" + "=" * 80)
+    print("QUESTION:", question)
+    print("=" * 80)
+
+    for i, doc in enumerate(docs, 1):
+        print(f"\nDOCUMENT {i}")
+        print("SOURCE:", doc.metadata.get("source"))
+        print("-" * 50)
+        print(doc.page_content)
+        print("-" * 50)
+
+    # Build context AFTER printing all documents
+    context = "\n\n".join(
+        [f"Document {i}:\n{doc.page_content}" for i, doc in enumerate(docs, 1)]
+    )
 
     sources = []
     seen = set()
@@ -60,19 +79,22 @@ def ask_question(question):
             sources.append(source)
 
     prompt = f"""
-You are a helpful college assistant.
+You are College AI Assistant.
 
-Answer ONLY using the context below.
+You are an AI assistant that answers questions about ABC Institute of Technology.
 
-If the answer cannot be found completely in the provided context,
-reply exactly:
+Use ONLY the information provided in the context.
+
+Instructions:
+- Answer clearly and naturally.
+- Combine information from multiple documents whenever relevant.
+- Use bullet points for lists.
+- Write complete sentences.
+- Never mention "Document 1", "Document 2", or "context".
+- Do not make up information.
+- If the answer is not found in the context, reply exactly:
 
 I don't have that information.
-
-Do not use outside knowledge.
-Do not guess.
-Do not make up information.
-Answer only from the context.
 
 Context:
 {context}

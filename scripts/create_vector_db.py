@@ -35,7 +35,10 @@ for file in txt_files:
         encoding="utf-8"
     )
 
-    documents.extend(loader.load())
+    docs = loader.load()
+
+
+    documents.extend(docs)
 
 # -----------------------------
 # Load PDF Files
@@ -53,10 +56,26 @@ print(f"Loaded {len(documents)} document(s).")
 # Split into chunks
 splitter = RecursiveCharacterTextSplitter(
     chunk_size=CHUNK_SIZE,
-    chunk_overlap=CHUNK_OVERLAP
+    chunk_overlap=CHUNK_OVERLAP,
+    separators=[
+        "\n\n",
+        "\n",
+        ". ",
+        " ",
+        ""
+    ]
 )
 
-chunks = splitter.split_documents(documents)
+chunks = []
+
+for doc in documents:
+
+    source = doc.metadata.get("source", "").lower()
+
+    if source.endswith(".txt"):
+        chunks.append(doc)
+    else:
+        chunks.extend(splitter.split_documents([doc]))
 
 print(f"Created {len(chunks)} chunks.")
 
