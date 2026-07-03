@@ -212,20 +212,6 @@ http://127.0.0.1:5000
 
 ---
 
-# College AI Assistant (RAG Chatbot)
-
-## 🚀 Live Demo
-
-https://college-rag-chatbot-production.up.railway.app/
-
-## ✨ Features
-
-- Retrieval-Augmented Generation (RAG)
-- Chroma Vector Database
-- Groq LLM
-- Flask Backend
-- Responsive UI
-
 ## 📸 Project Screenshots
 
 <h3>🏠 Home Page</h3>
